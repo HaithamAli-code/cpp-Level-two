@@ -562,11 +562,6 @@ int main()
 
     Pointer to Void
 
-
-
-
-*/
-
 int main()
 {
 
@@ -578,8 +573,10 @@ int main()
 
     cout << *P << endl; // error
     cout << *(static_cast<int*>(p)) << endl;
-
 }
+*/
+
+
 
 
 
