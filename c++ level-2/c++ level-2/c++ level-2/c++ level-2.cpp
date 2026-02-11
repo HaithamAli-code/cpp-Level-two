@@ -632,6 +632,57 @@ int main()
 
 Stack vs Heap
 
-
 */
 
+/*
+========================================
+    Vectors Access Elements
+========================================
+
+int main()
+{
+    vector<int> num = { 1,2,3,4,5 };
+
+    cout << num.at(0) << endl;
+    cout << num[0] << endl;
+}
+
+----------------------------------------
+
+Vectors Change Elements :
+
+int main()
+{
+    vector<int> num = { 1,2,3,4,5 };
+
+    for (const int& i : num)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
+    for (int& i : num)
+    {
+        i = 20;
+        cout << i << " ";
+    }
+}
+
+----------------------------------------
+
+Vector Iterators :
+
+int main()
+{
+    vector<int> num = { 1,2,3,4,5 };
+
+    vector<int>::iterator i;
+    for (i = num.begin() ; i != num.end() ; i++)
+    {
+        // begin return address first element
+        // begin return address last element
+        cout << *i << " ";
+    }
+}
+
+
+*/
