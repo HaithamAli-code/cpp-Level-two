@@ -624,6 +624,8 @@ int main()
     {
         cout << "\nstudent " << i + 1 << ": " << *(p + i) << endl;
     }
+
+    delete[] p;
 }
 */
 
