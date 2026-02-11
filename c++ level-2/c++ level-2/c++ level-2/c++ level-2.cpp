@@ -1,6 +1,5 @@
 #include <iostream>
 #include<vector>
-#include "FileName.h"
 using namespace std;
 
 /*
@@ -361,8 +360,7 @@ struct StEmployee
 void Read(vector<StEmployee>& vEmployee)
 {
     StEmployee c;
-    for (int i = 1 ; i <2 ; i++)
-    {
+
         cout << "\nFirst Name : ";
         cin >> c.FirstName;
 
@@ -373,7 +371,6 @@ void Read(vector<StEmployee>& vEmployee)
         cin >> c.Age;
 
         vEmployee.push_back(c);
-    }
 }
 
 void ReadEmployee(vector<StEmployee>& vEmployee)
@@ -575,3 +572,58 @@ int main()
     cout << *(static_cast<int*>(p)) << endl;
 }
 */
+
+/*
+========================================
+    Dynamic Memory Allocation New-Delete:
+========================================
+
+int main()
+{
+    // declare an int pointer
+    int* p1;
+    // declare an float pointer
+    float* p2;
+
+    // dynamically allocate memory
+    p1 = new int;
+    p2 = new float ;
+
+    // assigning value to the memory
+    *p1 = 20;
+    *p2 = 20.2;
+
+    cout << *p1 << endl;
+    cout << *p2 << endl;
+
+    // deallocate the memory
+    delete p1;
+    delete p2;
+}
+
+----------------------------------------
+
+Dynamic Arrays New-Delete with Pointer:
+
+int main()
+{
+    int num = 0;
+    cout << "enter total number of students : \n";
+    cin >> num;
+
+    int* p = new int[num];
+
+    cout << "enter grandes of students. \n";
+    for (int i = 0; i < num; i++)
+    {
+        cout << "student " << i + 1 << ": \n";
+        cin >> *(p + i);
+    }
+
+    for (int i = 0; i < num; i++)
+    {
+        cout << "\nstudent " << i + 1 << ": " << *(p + i) << endl;
+    }
+}
+*/
+
