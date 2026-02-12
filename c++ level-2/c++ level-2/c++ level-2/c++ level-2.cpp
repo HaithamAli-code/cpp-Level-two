@@ -764,9 +764,6 @@ int main()
     Some CCTYPE Functions:
 ========================================
 
-
-*/
-
 #include<cctype>
 int main()
 {
@@ -786,6 +783,99 @@ int main()
 
     // punctuation characters are !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
     cout << "ispunct : " << ispunct(';') << endl;
+}
+*/
+
+/*
+========================================
+    Write Mode: Write Data To File:
+========================================
+
+//write mode
+
+#include<fstream>
+int main()
+{
+    fstream MyFile;
+    MyFile.open("file.txt", ios::out); //write mode
+
+    if (MyFile.is_open())
+    {
+        MyFile << "haitham ali sami barhoma ";
+    }
+    MyFile.close();
+}
+
+----------------------------------------
+
+// Append Mode
+
+#include<fstream>
+int main()
+{
+    fstream MyFile;
+    MyFile.open("file.txt", ios::app);
+    if (MyFile.is_open())
+    {
+        MyFile << "saif ali sami barhoma \n";
+    }
+    MyFile.close();
+}
+
+----------------------------------------
+
+// Read Mode:
+
+#include<string>
+#include<fstream>
+void PrintFile(string NameFile)
+{
+    fstream MyFile;
+    MyFile.open(NameFile, ios::in); // read mode
+
+    if (MyFile.is_open())
+    {
+        string line;
+        while (getline(MyFile, line))
+        {
+            cout << line << endl;
+        }
+    }
+    MyFile.close();
+}
+int main()
+{
+    PrintFile("file.txt");
+}
+
+
+
+
+
+
+*/
+
+#include<string>
+#include<fstream>
+
+void PrintFile(string NameFile)
+{
+    fstream MyFile;
+    MyFile.open(NameFile, ios::in); // read mode
+
+    if (MyFile.is_open())
+    {
+        string line;
+        while (getline(MyFile, line))
+        {
+            cout << line << endl;
+        }
+    }
+    MyFile.close();
+}
+int main()
+{
+    PrintFile("file.txt");
 }
 
 
