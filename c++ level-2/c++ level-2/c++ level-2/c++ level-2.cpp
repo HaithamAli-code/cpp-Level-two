@@ -848,17 +848,14 @@ int main()
     PrintFile("file.txt");
 }
 
+----------------------------------------
 
-
-
-
-
-*/
+//  Load Data From File to Vector :
 
 #include<string>
 #include<fstream>
 
-void PrintFile(string NameFile)
+void LoadDataFromFileToVector(string NameFile , vector<string>& vPrintMyFile)
 {
     fstream MyFile;
     MyFile.open(NameFile, ios::in); // read mode
@@ -868,16 +865,132 @@ void PrintFile(string NameFile)
         string line;
         while (getline(MyFile, line))
         {
-            cout << line << endl;
+            vPrintMyFile.push_back(line);
         }
     }
     MyFile.close();
 }
 int main()
 {
-    PrintFile("file.txt");
+    vector<string> vPrintMyFile;
+    LoadDataFromFileToVector("file.txt" , vPrintMyFile);
+
+    for (string line : vPrintMyFile)
+    {
+        cout << line << endl;
+    }
 }
 
+----------------------------------------
 
+// Save Vector to File
 
+#include<string>
+#include<fstream>
 
+void LoadDataFromFileToVector(string NameFile , vector<string> vPrintMyFile)
+{
+    fstream MyFile;
+    MyFile.open(NameFile, ios::out);
+
+    if (MyFile.is_open())
+    {
+        for (string line : vPrintMyFile)
+        {
+            if (line != "")
+            {
+                MyFile << line << endl;
+            }
+        }
+    }
+    MyFile.close();
+}
+int main()
+{
+    vector<string> vPrintMyFile = { "haitham", "ali", "sami" ,"barhoma" , "saif" , "ali", "sami" , "barhoma"};
+    LoadDataFromFileToVector("file.txt", vPrintMyFile);
+}
+
+----------------------------------------
+
+// Delete Record From File:
+
+#include<string>
+#include<fstream>
+
+void PrintFileContent(string NameFile)
+{
+    fstream MyFile;
+    MyFile.open(NameFile, ios::in);
+    string line;
+
+    if (MyFile.is_open())
+    {
+        while (getline(MyFile, line))
+        {
+            cout << line << endl;
+        }
+    }
+    MyFile.close();
+}
+
+void LoadDataFromFileToVector(string NameFile, vector<string>& vFileContent)
+{
+    fstream MyFile;
+    MyFile.open(NameFile, ios::in);
+
+    string line;
+    if (MyFile.is_open())
+    {
+        while (getline(MyFile,line))
+        {
+            if (line != "")
+            {
+                vFileContent.push_back(line);
+            }
+        }
+    }
+    MyFile.close();
+}
+
+void SaveVectorToFile(string NameFile , vector<string> vFileContent)
+{
+    fstream MyFile;
+    MyFile.open(NameFile, ios::out);
+
+    if (MyFile.is_open())
+    {
+        for (string line : vFileContent)
+        {
+            MyFile << line << endl;
+        }
+    }
+    MyFile.close();
+}
+
+void DeleteRecordFromFile(string NameFile , string Record)
+{
+    vector<string> vFileContent;
+    LoadDataFromFileToVector("file.txt", vFileContent);
+
+    for (string &line : vFileContent)
+    {
+        if (line == Record)
+        {
+            line = "";
+        }
+    }
+    SaveVectorToFile(NameFile, vFileContent);
+}
+
+int main()
+{
+    PrintFileContent("file.txt");
+
+    DeleteRecordFromFile("file.txt", "ali");
+
+    cout << "\n**************************\n";
+
+    PrintFileContent("file.txt");
+}
+*/
