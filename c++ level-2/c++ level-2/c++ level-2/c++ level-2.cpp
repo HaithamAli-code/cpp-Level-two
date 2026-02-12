@@ -686,3 +686,108 @@ int main()
 
 
 */
+
+/*
+========================================
+    Exception Handling:
+========================================
+
+int main()
+{
+    vector<int> num = { 1,2,3,4,5 };
+    // cout << num.at(5) << endl;
+    try
+    {
+        // exception
+        cout << num.at(5) << endl;
+    }
+    catch (...)
+    {
+        // handling
+        cout << "out of bound " << endl;
+    }
+}
+*/
+
+/*
+========================================
+    String Object: (Common Methods):
+========================================
+
+#include<string>
+int main()
+{
+    string S1 = "My Name is Mohammed Abu-Hadhoud, I Love Programming.";
+    // print the length of the string
+    cout << S1.length() << endl;
+
+    // return athe letter at position 3
+    cout << S1.at(3) << endl;
+
+    // add to the end of string
+    S1.append(" @haitham");
+    cout << S1 << endl;
+
+    // insert " Ali" at position 7
+    S1.insert(7, " Ali");
+    cout << S1 << endl;
+
+    //Prints all the next 8 letters from position 16
+    cout << S1.substr(16 , 8) << endl;
+
+    //Adds one character to the end of the string
+    S1.push_back('X');
+    cout << S1 << endl;
+
+    //Removes one character from the end of the string
+    S1.pop_back();
+    cout << S1 << endl;
+
+    //Finds Ali in the string
+    cout << S1.find("Ali") << endl;
+
+    //Finds ali in the string
+    cout << S1.find("ali") << endl;
+    if (S1.find("ali") == S1.npos)
+    {
+        cout << "ali is not found";
+    }
+
+    //clears all string letters.
+    S1.clear();
+    cout << S1 << endl;
+}
+*/
+
+/*
+========================================
+    Some CCTYPE Functions:
+========================================
+
+
+*/
+
+#include<cctype>
+int main()
+{
+
+    char x , y;
+    x = tolower('A');
+    y = toupper('a');
+
+    cout << "converting a to A :" << y << endl;
+    cout << "converting A to a :" << x << endl;
+
+    cout << "isupper : " << isupper('a') << endl;
+    cout << "islower : " << islower('a') << endl;
+
+    // digit (1,9)
+    cout << "isdigit : " << isdigit('9') << endl;
+
+    // punctuation characters are !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+    cout << "ispunct : " << ispunct(';') << endl;
+}
+
+
+
+
