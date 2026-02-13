@@ -1,85 +1,58 @@
 #include <iostream>
 #include<vector>
 using namespace std;
-
-/*
-========================================
-            Debugging
-========================================
-????? ????? ??? ??? ??? Debug
-?????? ???? ?? ????? ??? ???
-????? ??? ?????????
-
-Types of Errors:
-- Syntax Error
-- Logical Error (Hard)
-- Runtime Error
-*/
-
-/*
-Breakpoint and Memory Values
-- Debug mode slow performance
-*/
-
-/*
-More about Breakpoints:
-- Jump to next breakpoint : F5
-- Disable all Breakpoints
-*/
-
-/*
-Autos:
-- Quick Watch Window : Shift + F9
-- Changing Values in Debugging Mode
-- Step Into / Step Over / Step Out
-*/
-
 /*****************************************************************/
 
-/*
-Create Library
-MyFunctions::sayHello();
-*/
+
 
 /*
 ========================================
       Ternary Operator (Short IF)
 ========================================
+
 Syntax:
 condition ? expression1 : expression2;
 
-Example:
-int number = 0;
-cin >> number;
+int main()
+{
+    int number = 0;
+    cin >> number;
 
-(number == 0)
-    ? cout << "Zero"
-    : ((number > 0) ? cout << "Positive" : cout << "Negative");
+    (number == 0) ? cout << "Zero" : ((number > 0) ? cout << "Positive" : cout << "Negative");
+}
 */
+
+
 
 /*
 ========================================
         Ranged Loop
 ========================================
+
 Syntax:
 for (declaration : collection)
 {
     // code
 }
 
-Example:
-int numbers[] = {1, 2, 3, 4, 5};
-
-for (int num : numbers)
+int main()
 {
-    cout << num << endl;
+    int numbers[] = {1, 2, 3, 4, 5};
+
+    for (int num : numbers)
+    {
+        cout << num << endl;
+    }
 }
 */
+
+
 
 /*
 ========================================
      Validation (Numbers Only) : ?????
 ========================================
+
 int ReadNumber()
 {
     int number;
@@ -96,9 +69,13 @@ int ReadNumber()
 
     return number;
 }
-
-cout << "Number: " << ReadNumber();
+int main()
+{
+    cout << "Number: " << ReadNumber();
+}
 */
+
+
 
 /*
 ========================================
@@ -108,12 +85,12 @@ cout << "Result: " << (12 & 25);
 cout << "Result: " << (12 | 25);
 */
 
+
+
 /*
 ========================================
  Function Declaration vs Definition
 ========================================
-#include <iostream>
-using namespace std;
 
 // Declaration
 void add(int, int);
@@ -131,23 +108,30 @@ void add(int a, int b)
 }
 */
 
+
+
 /*
 ========================================
         Default Parameters
 ========================================
+
 void greet(string name = "Guest")
 {
     cout << "Hello, " << name << "!" << endl;
 }
 */
 
+
+
 /*
 ========================================
       Function Overloading
 ========================================
-??? ??? ???????
-??? ?????? ??? ?? ??? ?????????
+
+Functions with the same name but different parameters
 */
+
+
 
 /*
 ========================================
@@ -155,11 +139,12 @@ void greet(string name = "Guest")
 ========================================
 */
 
+
+
 /*
 ========================================
             Recursion
 ========================================
-?????: ??? ???? ? Stack Overflow
 
 void PrintNumber(int a, int b)
 {
@@ -192,19 +177,22 @@ int PrintNumber(int a, int b)
 }
 */
 
+
+
 /*
 ========================================
         Variables
 ========================================
-Static Variable:
-- ?? ????? ??? ?????? ???????
+Static Variable
 
 Automatic Variable:
 auto x = 12.3;   // double
 
 Register Variable:
-- ???? ?? ?????
+    Deleted
 */
+
+
 
 /*
 ========================================
@@ -232,6 +220,8 @@ printf("First Letter : %*c\n", 2, h);
 printf("First Letter : %*c\n", 3, h);
 */
 
+
+
 /*
 ========================================
      Two Dimensional Array
@@ -248,6 +238,8 @@ for (int i = 0; i < 10; i++)
     cout << endl;
 }
 */
+
+
 
 /*
 ========================================
@@ -321,10 +313,9 @@ void Print(vector<MyInformation>& vInformation)
 
 int main()
 {
-    vector<MyInformation> vInformation; // ????? ??????
-    MyInformation Object; // ????? ????
+    vector<MyInformation> vInformation; 
+    MyInformation Object; 
 
-    // ????? ??????
     Object.FirstName = "haitham";
     Object.LastName = "ali";
     Object.Age = 20;
@@ -410,7 +401,7 @@ vector<int> Numbers = {10,20,30,40,50,60,70,80,90};
 Numbers.pop_back();  //delete
 Numbers.clear();
 
-if(!Numbers.empty())    //????? true ??? ??? ??? ????
+if(!Numbers.empty())
     Number.pop_back();
 
 if(Number.size() > 0)
@@ -418,10 +409,12 @@ if(Number.size() > 0)
 
 ----------------------------------------
 
-Numbers.front()  // ??? ????
-Numbers.back()  // ??? ????
-Numbers.capacity() // ??? ??????? ?????? ??????? ??????
+Numbers.front() 
+Numbers.back()  
+Numbers.capacity()
 */
+
+
 
 /*
 ========================================
@@ -439,21 +432,22 @@ int main()
 }
 */
 
+
+
 /*
 ========================================
      Pointer
 ========================================
 
-    ?? ????? ?? ?????? ?? ?? ???? ??? ???? ???? ??? ????? ?????? ???? ??? ????? ??? ??
-    ?????? = ????? ??????
-
-    EX:
+int main()
+{
     int a  = 10;
     cout << a << endl;
     cout << &a << endl;
 
     int * P = &a ;
     cout << P << endl;
+}
 
 ----------------------------------------
 
@@ -573,6 +567,8 @@ int main()
 }
 */
 
+
+
 /*
 ========================================
     Dynamic Memory Allocation New-Delete:
@@ -627,12 +623,17 @@ int main()
 
     delete[] p;
 }
-
-----------------------------------------
-
-Stack vs Heap
-
 */
+
+
+
+/*
+========================================
+    Stack vs Heap
+========================================
+*/
+
+
 
 /*
 ========================================
@@ -687,6 +688,8 @@ int main()
 
 */
 
+
+
 /*
 ========================================
     Exception Handling:
@@ -708,6 +711,8 @@ int main()
     }
 }
 */
+
+
 
 /*
 ========================================
@@ -759,6 +764,8 @@ int main()
 }
 */
 
+
+
 /*
 ========================================
     Some CCTYPE Functions:
@@ -785,6 +792,8 @@ int main()
     cout << "ispunct : " << ispunct(';') << endl;
 }
 */
+
+
 
 /*
 ========================================
